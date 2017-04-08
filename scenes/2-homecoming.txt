@@ -1,0 +1,262 @@
+*disable_reuse
+*temp attstrat ""
+*temp reason_made_her_mad ""
+
+[b]CHAPTER TWO: The Fall and New Rising[/b]
+
+You are lying in bed awake, as you have been all night, and it seems as if you've completely forgotten how to feel sleepy. In fact, aside from your dread and fears, you feel fantastic, the normal aches and pains from the rigors of a football game strangely absent. Your body feels alive with an energy you've never felt before, at least not to this degree. Perhaps, just perhaps, in moments of sheer genius on the field, you might've felt a "flow" somewhat like you feel now, but it was always so fleeting before. Now, it's not only everpresent but amplified to a level that seems almost impossible. You feel like you're powerful enough to do anything, anything at all.
+
+You ponder the mystery of how you wound up in the cemetery in a bloody jersey and the identity of the strange red-haired woman, but you can come to no conclusions. You wrack your brains trying to remember what happened after the game, but nothing comes to you.  
+
+*if fought_muggers = 2
+	You also think back to the fight and how it seems you killed a man, and this weighs heavily on your conscience. You worry about the police.
+
+As the hours tick by, you thoughts drift to other things as well, and you take stock of who you are:
+
+*choice
+	#Jake Steele: Tall and powerfully built, the team captain and quarterback.
+		*set full_name "Jake Steele"
+		*set first_name "Jake"
+		*set last_name "Steele"
+		*set nickname "The Plow"
+		*set height "Tall"
+		*set weight "medium"
+		*set strength_day 15
+		*set strength_night 85
+		*set agility_day 8
+		*set agility_night 70
+		*set stamina_day 8
+		*set stamina_night 70
+		*goto breakfast
+	#Mike Spiro: Short but very powerfully built. Slightly chunky but still a hit with the girls. A good linebacker. 
+		*set full_name "Mike Spiro"
+		*set first_name "Mike"
+		*set last_name "Spiro"
+		*set nickname "Icebox"
+		*set height "Short"
+		*set weight "heavy"
+		*set strength_day 20
+		*set strength_night 90
+		*set agility_day 7
+		*set agility_night 65
+		*set stamina_day 5
+		*set stamina_night 60
+		*goto breakfast
+	#Richard Korner: Small, fast, and nimble, making you a great wide receiver.
+		*set full_name "Rich Korner"
+		*set first_name "Rich"
+		*set last_name "Korner"
+		*set nickname "Mr. Speed"
+		*set height "Medium height"
+		*set weight "light"
+		*set strength_day 7
+		*set strength_night 65
+		*set agility_day 20
+		*set agility_night 90
+		*set stamina_day 12
+		*set stamina_night 80
+		*goto breakfast
+	# Choose your own name and football position
+		*label input_name
+		What is your first name?
+		*input_text first_name
+		
+		What is your last name?
+		*input_text last_name
+		
+		*set full_name "${first_name} ${last_name}"
+		Your full name is ${full_name}. Is that correct?
+		*choice
+			# Yes
+				*goto input_size
+			*allow_reuse # No
+				*goto input_name
+				
+		*label input_size
+		How tall are you, and how much do you weigh?
+		*choice
+			# Tall and skinny
+				*set height "Tall"
+				*set weight "light"
+				*goto input_position
+			# Tall and average weight
+				*set height "Tall"
+				*set weight "medium"
+				*goto input_position
+			# Tall and heavy
+				*set height "Tall"
+				*set weight "heavy"
+				*goto input_position
+			# Medium height, skinny
+				*set height "Medium height"
+				*set weight "light"
+				*goto input_position
+			# Medium height, medium weight
+				*set height "Medium height"
+				*set weight "medium"
+				*goto input_position
+			# Medium height, heavy weight
+				*set height "Medium height"
+				*set weight "heavy"
+				*goto input_position
+			# Short and light weight
+				*set height "Short"
+				*set weight "light"
+				*goto input_position
+			# Short and medium weight
+				*set height "Short"
+				*set weight "medium"
+				*goto input_position
+			# Short and heavy weight
+				*set height "Short"
+				*set weight "heavy"
+				*goto input_position
+		
+		*label input_position
+		What position did you play on your high school football team?
+		
+		*choice
+			# Quarterback. You're balanced between strength, agility, and stamina. 
+				*set strength_day 10
+				*set strength_night 75
+				*set agility_day 10
+				*set agility_night 75
+				*set stamina_day 10
+				*set stamina_night 75
+				*goto adjust_stats
+			# Linebacker. You're very strong but don't need as much agility and stamina.
+				*set strength_day 15
+				*set strength_night 85
+				*set agility_day 7
+				*set agility_night 65
+				*set stamina_day 7
+				*set stamina_night 65
+				*goto adjust_stats
+			# Wide Receiver. You're not as strong but have a lot of agility and stamina.
+				*set strength_day 10
+				*set strength_night 75
+				*set agility_day 15
+				*set agility_night 85
+				*set stamina_day 10
+				*set stamina_night 75
+				*goto adjust_stats
+
+*label adjust_stats
+*if height = "Tall"
+	*set strength_night +5
+	*set agility_night -5
+	
+*if height = "Short"
+	*set strength_night -5
+	*set agility_night +5
+				
+*if weight = "heavy"
+	*set stamina_night -5
+	*set strength_night +5
+				
+*if weight = "light"
+	*set strength_night -5
+	*set stamina_night +5
+	
+*label calc_day_stats	
+*comment until this is done, day stats will be the same as they were before height/weight adjustment of str/agl/sta is done. Also, the football position str/agl/sta are not "fair" yet. All should equal out to the same sum. Once this is fixed, the 3 pre-set characters should be brought into conformity.
+				
+*label breakfast	
+
+Slowly, the dark of night gives way to the first crack of dawn. 
+
+Eventually, you hear your parents rise and go about their morning routine, so you do as well. You take your morning shower and put on your school clothes. You carefully hide your bloodied jersey and put a fresh one in your gym bag.
+
+During all this activity, you notice that you're a bit slow, even clumsy. Things seem to take more effort, but you try to shake it off, telling yourself it's just because you didn't get any sleep, that once you get going, you'll at least get back to normal, if not the heightened strength and speed of last night. Visually, details escape you. Sounds are muted, or maybe it's just that you can't pay attention no matter how hard you try. In contrast, you remember that last night, everything was so clear, so vibrant, every sight, sound, and smell. You worry that you might be sick with some strange disease, but for now, you decide to keep quiet about it.
+
+***
+
+[i]Perhaps you are wondering why I did not evaporate into smoke that morning, for are not vampires burned by sunlight? No, that is the stuff of legend, and in reality, we merely become weak, slow, and clumsy. It becomes difficult to think clearly, and our senses are enfeebled. However, we can go about in the light like any human.[/i]
+
+***
+
+*if parents_rep <=25
+	Your insolence last night was the last straw. This morning, you found your parents sitting at the breakfast table in silence, waiting for you. Immediately, your father says, "Your mom and I have just talked it over, and we've decided that what I said last night still stands--you're grounded for a week. That means you go to school, football, and that's it--NO FRIENDS. You got it?"
+	*goto endif
+*elseif parents_rep <=30
+	*set parents_rep %+2
+	Breakfast is eaten in silence. As you get up to go to school, your father says, "Remember what I said last night. You're grounded for the next three days."
+	
+	"Whatever," you say and shuffle off.
+	*goto endif
+*elseif parents_rep <= 60
+	*set parents_rep %+5
+	Things seem to have blown over slightly as you sit down to eat breakfast with your parents. They ask about school, Robyn, and football, but you're preoccupied by other thoughts.
+	*goto endif
+*else
+	*set parents_rep %+10
+	"Good morning!" your parents say, greeting you like a conquering hero as you join them for breakfast. "Great game last night."
+	
+	You do your best to fake a smile, preoccupied by other thoughts.
+	
+*label endif
+
+Strangely, you're not hungry, and in fact, the thought of eating is suddenly disgusting. You decide to skip breakfast, prompting your father to say, "You gotta eat to keep your strength up, son!"
+
+You make up an excuse about trying to lose weight to be faster and leave the house as quickly as possible.
+
+*page_break Go to School
+As you drive to school, it's hard to concentrate on the road, but you manage by focusing very intently. At a stoplight, you take the opportunity to relax, storing up the energy to concentrate again later, and while sitting there, you wonder how odd it is that you're not hungry. You're always hungry. Ravenous, even, due to your high metabolism from all the strength and cardiovascular conditioning from your daily workouts. As soon as you think these thoughts, you seem to sense a different kind of hunger, something more whole-body rather than just in the stomach. It's almost sexual, a kind of lust, but instead of wanting a girl, you want something else that you can't quite put your finger on. The object of your attraction seems to be both men and women, and it seems you almost want to bite them, which strikes you as extremely odd. Are you developing a fetish? Is this how it happens?
+
+The light changes, so you put these thoughts aside, focusing again on the road, which constantly threatens to slip from your mind. You feel that you could appear normal at school, talking and joking as usual, and will only come into play with more difficult mental tasks. You're confident that if you concentrate, you can drive safely and handle your classes. You won't be an A student, of course, but then again, you never were.
+
+As you drive, your new hunger seems to be getting stronger, and you find it harder and harder to keep your eyes on the road and away from all the luscious pedestrians and other drivers. 
+
+Finally you make it to school and park in the student parking lot full of your classmates milling about. You see the nerds hurrying to class or sitting someplace getting in some last minute studying. A group of pale, withdrawn emo kids sulk in their usual spot in the shadow by the steps. The goths are sitting at a picnic table brooding, and the punks and metalheads are roaming about looking for trouble. You see your fellow teammates laughing and horsing around and habitually move to join them.
+
+They greet you the same as they do every day after a win, with a big cheer, continuing the celebration from the night before.
+
+"Hey! Where'd ya go, man?" Rob Fulton, the center, says, giving you a friendly slap on the back, which, in your weakened state almost makes you trip and fall.
+
+"Whoa, easy there," Rob laughs as you regain your balance. "You okay?"
+
+Horrified at how weak you are, you can only mumble and nod. Luckily, your teammates, distracted by their own excitement, pay you no mind.
+
+*choice
+	# Join in the banter
+		Maybe some good-spirited fun will help take your mind off your troubles. You laugh and joke with the rest of the boys, telling exaggerated tales of your exploits on the field last night.
+		
+		Carl Duncan then tells a really stupid joke and everyone groans. Usually someone tackles him at this point, and it can turn into a good-natured wrestling match to burn off some steam.
+		
+		*choice
+			# Tackle him
+				"Ok, that joke was so bad, you gotta pay," you laugh and charge in to tackle him. Your legs are so weak, however, that you fail to even knock him off balance. Suddenly, everyone is silent--what happened is just too odd, and it kills the jubilant mood.
+				*set team_rep -2
+				*goto bell_rings
+			# Better not get carried away...
+				Someone else tackles him while everyone, including you, stand around rooting for your favorite, jeering at the losing side and cheering for the winner.
+				*goto bell_rings
+	# Make up an excuse to leave
+		"See you at practice today!" someone calls out as you break away from the pack.
+		*goto locker
+		
+*label bell_rings
+
+The bell rings and everyone goes into the school, heading for their locker or first period classroom.
+
+*label your_locker
+
+You head to your locker, wondering if Robyn, your girlfriend, will be there. A lot of times she meets you there before class, and after all that's happened recently, you hope she's there today.
+
+You get to your locker, but she's not there. It's a bit odd, given that you'd won a game last night, but you figure she's busy or something--she has a lot going on, after all, being the head cheerleader and all. 
+
+Just as you open the locker, you feel a hard shove from behind.
+
+"Ha ha ha!" cries Robyn, but when she sees that her shove caused you to crash headlong into your locker's top shelf, her face changes to one of concern and confusion.
+
+"Oh, sorry," she says, helping you up. "I didn't push you that hard, did I?" 
+
+*choice
+	# "Dammit, Robyn! I'm getting sick of your jokes."
+		*goto day1period1
+	# "No, I just slipped. No worries."
+		*goto day1period1
+	# "No, you didn't, but something seems wrong with me today."
+		*goto day1period1
+	
+*label day1period1	

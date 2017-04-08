@@ -1,0 +1,180 @@
+[b]CHAPTER TWO: The Fall and New Rising[/b]
+
+You are lying in bed awake, as you have been all night, and it seems as if you've completely forgotten how to feel sleepy. In fact, aside from your dread and fears, you feel fantastic, the normal aches and pains from the rigors of a football game strangely absent. Your body feels alive with an energy you've never felt before, at least not to this degree. Perhaps, just perhaps, in moments of sheer genius on the field, you might've felt a "flow" somewhat like you feel now, but it was always so fleeting before. Now, it's not only everpresent but amplified to a level that seems almost impossible. You feel like you're powerful enough to do anything, anything at all.
+
+Lying in bed gives you a chance to take stock of who you are:
+
+*choice
+	#Jake Steele: Tall and powerfully built, the team captain and quarterback.
+		*set full_name "Jake Steele"
+		*set first_name "Jake"
+		*set last_name "Steele"
+		*set nickname "The Plow"
+		*set height "Tall"
+		*set weight "medium"
+		*set strength_day 10
+		*set strength_night 75
+		*set agility_day 10
+		*set agility_night 75
+		*set stamina_day 10
+		*set stamina_night 75
+		*goto breakfast
+	#Mike Spiro: Short but very powerfully built. Slightly chunky but still a hit with the girls. A good linebacker. 
+		*set full_name "Mike Spiro"
+		*set first_name "Mike"
+		*set last_name "Spiro"
+		*set nickname "Icebox"
+		*set height "Short"
+		*set weight "heavy"
+		*set strength_day 15
+		*set strength_night 85
+		*set agility_day 7
+		*set agility_night 65
+		*set stamina_day 7
+		*set stamina_night 65
+		*goto breakfast
+	#Richard Korner: Small, fast, and nimble, making you a great wide receiver.
+		*set full_name "Rich Korner"
+		*set first_name "Rich"
+		*set last_name "Korner"
+		*set nickname "Mr. Speed"
+		*set height "Medium height"
+		*set weight "light"
+		*set strength_day 7
+		*set strength_night 65
+		*set agility_day 20
+		*set agility_night 90
+		*set stamina_day 10
+		*set stamina_night 75
+		*goto breakfast
+	
+*label breakfast	
+
+Slowly, the dark of night gives way to the first crack of dawn. 
+
+Eventually, you hear your parents rise and go about their morning routine, so you do as well. You take your morning shower and put on your school clothes. You carefully hide your bloodied jersey and put a fresh one in your gym bag.
+
+During all this activity, you notice that you're a bit slow, even clumsy. Things seem to take more effort, but you try to shake it off, telling yourself it's just because you didn't get any sleep, that once you get going, you'll at least get back to normal, if not the heightened strength and speed of last night. Visually, details escape you. Sounds are muted, or maybe it's just that you can't pay attention no matter how hard you try. In contrast, you remember that last night, everything was so clear, so vibrant, every sight, sound, and smell. You worry that you might be sick with some strange disease, but for now, you decide to keep quiet about it.
+
+***
+
+[i]Perhaps you are wondering why I did not evaporate into smoke that morning, for are not vampires burned by sunlight? No, that is the stuff of legend, and in reality, we merely become weak, slow, and clumsy. It becomes difficult to think clearly, and our senses are enfeebled. However, we can go about in the light like any human.[/i]
+
+***
+
+*if parents_rep <=25
+	Your insolence last night was the last straw. This morning, you found your parents sitting at the breakfast table in silence, waiting for you. Immediately, your father says, "Your mom and I have just talked it over, and we've decided that what I said last night still stands--you're grounded for a week. That means you go to school, football, and that's it--NO FRIENDS. You got it?"
+	*goto endif
+*elseif parents_rep <=30
+	*set parents_rep %+2
+	Breakfast is eaten in silence. As you get up to go to school, your father says, "Remember what I said last night. You're grounded for the next three days."
+	
+	"Whatever," you say and shuffle off.
+	*goto endif
+*elseif parents_rep <= 60
+	*set parents_rep %+5
+	Things seem to have blown over slightly as you sit down to eat breakfast with your parents. They ask about school, Robyn, and football, but you're preoccupied by other thoughts.
+	*goto endif
+*else
+	*set parents_rep %+10
+	"Good morning!" your parents say, greeting you like a conquering hero as you join them for breakfast. "Great game last night."
+	
+	You do your best to fake a smile, preoccupied by other thoughts.
+	
+*label endif
+
+Strangely, you're not hungry, and in fact, the thought of eating is suddenly disgusting. You decide to skip breakfast, prompting your father to say, "You gotta eat to keep your strength up, son!"
+
+You make up an excuse about trying to lose weight to be faster and leave the house as quickly as possible.
+
+*if debug 
+	*show_password
+
+*page_break Go to School
+As you drive to school, it's hard to concentrate on the road, but you manage by focusing very intently. At a stoplight, you take the opportunity to relax, storing up the energy to concentrate again later, and while sitting there, you wonder how odd it is that you're not hungry. You're always hungry. Ravenous, even, due to your high metabolism from all the strength and cardiovascular conditioning from your daily workouts. As soon as you think these thoughts, you seem to sense a different kind of hunger, something more whole-body rather than just in the stomach. It's almost sexual, a kind of lust, but instead of wanting a girl, you want something else that you can't quite put your finger on. The object of your attraction seems to be both men and women, and it seems you almost want to bite them, which strikes you as extremely odd. Are you developing a fetish? Is this how it happens?
+
+The light changes, so you put these thoughts aside, focusing again on the road, which constantly threatens to slip from your mind. Meanwhile, the new hunger seems to be getting stronger, and you find it harder and harder to keep your eyes on the road and away from all the luscious pedestrians and other drivers. 
+
+As you near the school, your eyes alight upon a woman sitting at a bus stop. She's wearing a black coat with a black fur hat and is quite attractive, yet you don't have the desire to bite her, which is so strange that you slow down to look at her, wondering what's different about her. As you pass by, she looks directly at you and smiles, almost as if she were watching for you, and then that's when you notice her long red hair! Could this be the woman from last night? Though you only saw her briefly from a distance, her height and body type seem similar. With a subtle motion of her head, she asks you to approach, so you park the car as close as you can. She greets you with a smile and slow nod, her piercing green eyes never leaving yours.
+
+"By now, I trust you're hungry," she says, and you're unsure if it's a question or not.
+
+This MUST be the woman from last night. Your reaction to this woman is...
+
+*temp attitude
+*choice
+	#...grateful. Maybe she has some answers.
+		*set attitude "grateful"
+		*goto strategy
+	#...suspicious. Is she somehow connected to the strange things that have been happening to you?
+		*set attitude "suspicious"
+		*goto strategy
+	#...angry. She's definitely involved. What right does she have to mess with your life?
+		*set attitude "angry"
+		*goto strategy
+		
+*label strategy
+*temp strategy
+In your interaction with the woman, you plan to be...
+*choice
+	*selectable_if (attitude != "angry") #...humble. If I'm nice to her, she might help me.
+		*set strategy "humble"
+		*goto questions
+	*selectable_if (attitude != "angry") #...panicked. If she sees how desperate I am, she might want to help me more.
+		*set strategy "panicked"
+		*goto questions
+	#...probing. I will keep her talking and try to get answers that way.
+		*set strategy "probing"
+		*goto questions
+	#...aloof. I will be quiet so as to not give anything away and see what she wants.
+		*set strategy "aloof"
+		*goto questions
+	#...businesslike. I will get right to the point and keep it professional.
+		*set strategy "businesslike"
+		*goto questions
+	#...suave. I will manipulate her with sex appeal.
+		*set strategy "suave"
+		*goto questions
+	#...clever. I will pretend I have knowledge she doesn't to put her on the defensive.
+		*set strategy "clever"
+		*goto questions
+	#...insulting. Sometimes if you make someone mad, they'll reveal things or otherwise give you an advantage.
+		*set strategy "insulting"
+		*goto questions
+	*selectable_if (attitude = "angry") #...aggressive. I will press her for answers.
+		*set strategy "aggressive"
+		*goto questions
+	*selectable_if (attitude = "angry") #...threatening. I will demand answers and make sure she knows there will be consequences if I'm not satisfied.
+		*set strategy "threatening"
+		*goto questions
+		
+*label questions
+
+*temp attstrat "${attitude}-${strategy}"
+*gotoref attstrat
+	
+*label grateful-humble		
+"I'm feeling something LIKE hunger, that's for sure!" you say, sincerely, hoping she will elaborate.
+
+"I know you are," she replies, sagely. "I also know you are experiencing many other strange things, and I will tell you all about them tonight after sundown. I want you to meet me here at 9 pm. Will you do that?"
+
+You nod, and she adds, speaking in a businesslike fashion, "Do your best to seem normal in school, and do NOT act upon your 'hunger.' This is vital. You will be fine."
+
+She smiles and her eyes narrow seductively. "I will do everything I can to help you through this hard time."
+*goto questions2
+
+*label grateful-panicked
+"Yes, and it's freaking me out!" you cry, doing your best to keep your voice down, so the other people nearby don't hear.
+
+The woman touches your shoulder comfortingly. "Something terrible has been done to you, and I intend to not only help you but punish those responsible."
+
+*label questions2
+*choice
+	#Who are you?
+		*goto answers
+	#Why did you run from me last night?
+		*goto answers
+	#What's going on with me?
+		*goto answers
+	
+*label answers

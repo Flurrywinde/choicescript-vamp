@@ -1,0 +1,375 @@
+*title Vampire Life: A High School Vampire Story
+*scene_list
+	startup
+	2-homecoming
+	3-mysterywoman
+	4-nightgame
+	5-shiftingtides
+	6-vengeance
+	7-darkhalls
+
+*create debug true	
+	
+*create full_name ""
+*create first_name ""
+*create last_name ""
+*create nickname ""
+
+*create height ""
+*comment Tall, Medium, Short
+*create weight ""
+*comment Heavy, Medium, Light
+
+*create strength_day 0
+*create strength_night 0
+*create agility_day 0
+*create agility_night 0
+*create stamina_day 0
+*create stamina_night 0
+*comment Normal human maximum is 50
+
+*create team_rep 99
+*create robyn_rep 99
+*create parents_rep 99
+*create estelle_rep 99
+
+*create fought_muggers 0
+*comment 0=Didn't fight, 1=Fought back, 2=Attacked first
+
+*disable_reuse
+*temp attstrat ""
+*temp reason_made_her_mad ""
+
+As you drive to school, it's hard to concentrate on the road, but you manage by focusing very intently. At a stoplight, you take the opportunity to relax, storing up the energy to concentrate again later, and while sitting there, you wonder how odd it is that you're not hungry. You're always hungry. Ravenous, even, due to your high metabolism from all the strength and cardiovascular conditioning from your daily workouts. As soon as you think these thoughts, you seem to sense a different kind of hunger, something more whole-body rather than just in the stomach. It's almost sexual, a kind of lust, but instead of wanting a girl, you want something else that you can't quite put your finger on. The object of your attraction seems to be both men and women, and it seems you almost want to bite them, which strikes you as extremely odd. Are you developing a fetish? Is this how it happens?
+
+The light changes, so you put these thoughts aside, focusing again on the road, which constantly threatens to slip from your mind. You feel that you could appear normal at school, talking and joking as usual, and will only come into play with more difficult mental tasks. You're confident that if you concentrate, you can drive safely and handle your classes. You won't be an A student, of course, but then again, you never were.
+
+As you drive, your new hunger seems to be getting stronger, and you find it harder and harder to keep your eyes on the road and away from all the luscious pedestrians and other drivers. 
+
+Nearing the school, your eyes alight upon a woman sitting at a bus stop. She's wearing a black coat with a black fur hat and is quite attractive, yet you don't have the desire to bite her, which is so strange that you slow down to look at her, wondering what's different about her. As you pass by, she looks directly at you and smiles, almost as if she were watching for you, and then that's when you notice her long red hair! Could this be the woman from last night? Though you only saw her briefly from a distance, her height and body type seem similar. With a subtle motion of her head, she asks you to approach, so you park the car as close as you can. She greets you with a smile and slow nod, her piercing green eyes never leaving yours.
+
+"By now, I trust you're hungry," she says, and you're unsure if it's a question or not.
+
+You look this mysterious woman up and down, trying to glean as much information as you can before you respond. You notice that her clothing is impeccable and expensive with a slightly old world, vintage look to it. Her demeanor shows a cool confidence, almost aristocratic and bordering on haughtiness, but at the same time, she has a sultry quality hinting at a raw sensuality burning just beneath the surface.
+
+This MUST be the woman from last night. Your reaction to this woman is...
+
+*temp attitude
+*if debug 
+	*show_password
+		
+*choice
+	#...grateful. Maybe she has some answers.
+		*set attitude "grateful"
+		*goto strategy
+	#...suspicious. Is she somehow connected to the strange things that have been happening to you?
+		*set attitude "suspicious"
+		*goto strategy
+	#...angry. She's definitely involved. What right does she have to mess with your life?
+		*set attitude "angry"
+		*goto strategy
+
+*label strategy
+*temp strategy
+*if attstrat = ""
+	In your interaction with the woman, you plan to be...
+	
+*choice
+	*selectable_if (attitude = "grateful") #...humble. If I'm nice to her, she might help me.
+		*set strategy "humble"
+		*goto questions
+	*selectable_if (attitude = "grateful") #...panicked. If she sees how desperate I am, she might want to help me more.
+		*set strategy "panicked"
+		*goto questions
+	*selectable_if (attitude != "grateful") #...probing. I will keep her talking and try to get answers that way.
+		*set strategy "probing"
+		*goto questions
+	*selectable_if (attitude != "grateful") #...aloof. I will be quiet so as to not give anything away and see what she wants.
+		*set strategy "aloof"
+		*goto questions
+	#...businesslike. I will get right to the point and keep it professional.
+		*set strategy "businesslike"
+		*goto questions
+	*selectable_if (attitude != "angry") #...suave. I will manipulate her with sex appeal.
+		*set strategy "suave"
+		*goto questions
+	#...raunchy. I will come on to her.
+		*set strategy "suave"
+		*goto questions
+	*selectable_if (attitude != "grateful") #...clever. I will pretend I have knowledge she doesn't to put her on the defensive.
+		*set strategy "clever"
+		*goto questions
+	*selectable_if (attitude != "grateful") #...insulting. Sometimes if you make someone mad, they'll reveal things or otherwise give you an advantage.
+		*set strategy "insulting"
+		*goto questions
+	*selectable_if (attitude = "angry") #...aggressive. I will press her for answers.
+		*set strategy "aggressive"
+		*goto questions
+	*selectable_if (attitude = "angry") #...threatening. I will demand answers and make sure she knows there will be consequences if I'm not satisfied.
+		*set strategy "threatening"
+		*goto questions
+		
+*label questions
+
+You wonder how this strange woman could possibly know about the odd, powerful hunger you're experiencing when you yourself only noticed it a few moments previous. You try to reply in a way that will both get some answers and help you in your interactions with her in the future.
+
+*set attstrat "${attitude}-${strategy}"
+*gotoref attstrat
+	
+*label grateful-humble		
+"I'm feeling something LIKE hunger, that's for sure!" you say, sincerely, hoping she will elaborate.
+*goto questions2
+
+*label grateful-panicked
+"Yes, I'm hungry, and it's freaking me out!" you cry, doing your best to keep your voice down, so the other people nearby don't hear.
+*goto questions2
+
+*label grateful-businesslike
+"Yes, I do feel an odd sensation kind of like hunger," you say, stifling the urge to pepper her with questions. "What do you know about it and what do you want from me?"
+*goto questions2
+
+*label grateful-suave 
+"Yes, I do feel an odd sensation kind of like hunger," you say, "Would you like to go somewhere and talk about it?"
+*goto questions2
+
+*label grateful-raunchy 
+"Well, it's a kind of hunger that makes me want to grab a beautiful woman like you and make her mine," you say with a sly grin.
+*goto questions2
+
+*label suspicious-probing 
+"How do you know about this 'hunger' of mine?" you ask, eyes narrowing.
+*goto questions2
+
+*label suspicious-aloof 
+"Maybe," you answer cryptically.
+*goto questions2
+
+*label suspicious-businesslike 
+"I don't know how you know about this 'hunger' of mine, but I would like to find out. What do you want from me?"
+*goto questions2
+
+*label suspicious-suave 
+"You certainly are mysterious," you smile. "Would you like to go somewhere where we can get to know each other better?"
+*goto questions2
+
+*label suspicious-raunchy 
+"I don't know about hunger, but you're hot, babe! Let's take a ride in my car."
+*goto questions2
+
+*label suspicious-clever 
+"Yes, I do feel the hunger," you reply, looking her square in the eye. "I already know all about it, and all about you as well. What do you want?"
+*goto questions2
+
+*label suspicious-insulting 
+"What business is it of yours what I'm feeling right now?" you ask, glowering.
+*goto questions2
+
+*label angry-probing 
+"How do you know about this 'hunger' of mine?" you ask, eyes narrowing.
+*goto questions2
+
+*label angry-aloof 
+"Get to the point," you say impatiently.
+*goto questions2
+
+*label angry-businesslike 
+"I don't know what this is about," you say, glaring at her, "But I'd like some answers."
+*goto questions2
+
+*label angry-raunchy 
+"Maybe I'm 'hungry' for you," you say, trying to stare her down. "Do you put out or what?"
+*goto questions2
+
+*label angry-clever 
+"Yes, I do feel the hunger," you reply, looking her square in the eye. "I already know all about it, and all about you as well, so I suggest you start talking."
+*goto questions2
+
+*label angry-insulting 
+"You've got some nerve, lady. Why don't you take your 'hunger' and shove it!"
+*goto questions2
+
+*label angry-aggressive 
+"Who are you? Why did you run from me last night? What the hell is going on?" you pepper her with questions with an angry tone.
+*goto questions2
+
+*label angry-threatening
+"Look, lady," you say with a menacing tone, stepping forward until you're towering over her. "It's obvious you know a lot about me, so you better start talking if you know what's good for you."
+*goto questions2
+
+*label questions2
+
+*gotoref attstrat&"2"
+
+*label grateful-humble2		
+*label grateful-panicked2
+*label grateful-businesslike2
+*label grateful-raunchy2
+*label suspicious-probing2
+*label angry-probing2 
+*label suspicious-aloof2
+*label suspicious-businesslike2
+
+The woman touches your shoulder comfortingly. "Something terrible has been done to you, and I intend to not only help you but punish those responsible. Shall we get in your car and talk about it? I will tell you everything you need to know."
+*goto questions3
+
+*label grateful-suave2
+*label suspicious-suave2
+
+"Yes, lead the way," the woman responds, smiling and already walking toward your car. 
+
+*if strategy = "suspicious"
+	You can't help but wonder if you're falling right into her trap, but you plan to go along with it for now.
+	
+*goto estelle_car
+
+*label suspicious-raunchy2 
+*label angry-raunchy2 
+
+The woman merely chuckles at your vulgar remark. Frankly, you were expecting a slap in the face, but she laughs it off, saying, "Oh, you silly boy. Don't you know there are wonders far greater in this world than that little thing between your legs? There is so much I can teach you, but the question is, Do you wish to learn?"
+*goto raunchy3
+
+*label suspicious-clever2 
+*label angry-clever2 
+
+You're not sure, but you think your daring, baseless claim caused the woman a tiny moment of hesitation. However, she seems completely unfazed when she challenges, "Oh really? Tell me, then, what do you know?"
+
+*fake_choice
+	# "Why should I?"
+	# "I know why you ran last night, and I know why you were there."
+	# "I know you're behind everything that's going on with me, and it's all part of your sick plan."
+	
+"You're speaking vaguely, boy," the woman laughs. "You don't know a thing. Wouldn't you really like to know what's going on?"
+
+*choice
+	# Give in. Say, "Yes."
+		"Then let's get in your car and talk further. Yes?"
+		*goto questions3
+	# Try to continue the charade.
+		The woman is exceedingly sharp and doesn't fall for your ruse, merely responding to each vague statement with a probing question. You'd meant to try and take control, but she's managed to turn it around completely, putting you on the defensive.
+		
+		You:
+		
+		*if attitude = "suspicious"
+			*choice
+				# Get humble
+					*set attitude "humble"
+					*goto new_strategy
+				# Become angry
+					*set attitude "angry"
+					*goto new_strategy
+		*else
+			*choice
+				# Stay angry
+					*goto strategy
+				# Get humble
+					*set attitude "humble"
+					*goto new_strategy
+
+*label new_strategy					
+
+You decide to switch to a new tactic:
+*goto strategy
+
+*label suspicious-insulting2 
+"You have some nerve, boy," the woman says coldly. "I was going to help you but not anymore."
+
+She turns and walks away.
+*goto made_her_mad
+
+*label angry-insulting2 
+The woman's face turns red, and she seems too angry too speak.
+
+Finally, her voice is low and cold. "Good luck."
+
+She turns and walks away.
+
+*label made_her_mad
+*if attitude = "suspicious"
+	*set reason_made_her_mad "She was probably up to no good anyway."
+*if attitude = "angry"
+	*set reason_made_her_mad "You'll figure things out on your own."
+
+*choice
+	# Chase after the woman and apologize
+		*set attitude "humble"
+		"I'm sorry," you call out, trotting to keep up.
+		
+		"That's better," the woman says warmly, turning back to face you. "Shall we talk about things in your car?"
+		*goto questions3
+	# Let her go. ${reason_made_her_mad}
+		*goto school
+		
+*label angry-aloof2 
+*label angry-businesslike2 
+
+The woman looks at you pointedly, obviously not liking your tone. Finally, she smirks disdainfully and says, "I'm offering to help you, but perhaps I shouldn't bother."
+
+She turns and walks away.
+
+*choice
+	# Chase after the woman and apologize
+		*set attitude "humble"
+		"I'm sorry," you call out, trotting to keep up.
+		
+		"That's better," the woman says warmly, turning back to face you. "Shall we talk about things in your car?"
+		*goto questions3
+	# Let her go. You'll figure things out on your own.
+		*goto school
+	# Curse at her as she walks away
+		You shout rude obscenities to the woman's back as she walks away.
+		
+		As you keep it up, finally, she stiffens, pauses, then turns. "You'll regret that," she says, her face ashen, her hands visibly shaking with anger. She seems almost about to lose control but then quickly turns and resumes walking away at a faster pace.
+		*goto school
+
+*label angry-aggressive2 
+"Calm yourself," the woman snaps. "I will answer your questions if you ask them nicely."
+
+*choice
+	# Apologize
+		*set attitude "humble"
+		"I'm sorry," you say, calming yourself.
+		
+		"That's better," the woman says warmly. "Shall we talk about things in your car?"
+		*goto questions3
+	# Stay angry and keep asking questions
+		You keep up your barage of questions.
+		
+		*goto angry-aloof2
+	# Stay angry and insult her
+		"What is wrong with you, lady?" you hiss. 
+		
+		*goto suspicious-insulting2
+	# Insult her BAD
+		"You need some serious help, lady. Go look up 'psychiatrist' in the phone book. It's under, 'P.'"
+		
+		The woman's face turns beet red. 
+		
+		"You'll regret that," she says, her hands visibly shaking with anger. She turns and stalks off.
+		*choice
+			# Chase after the woman and apologize
+				*set attitude "humble"
+				"I'm sorry," you call out, trotting to keep up, but it's no use. She's already gone.
+				*goto school
+			# Let her go. You'll figure things out on your own.
+				*goto school
+	
+*label angry-threatening2
+"Is that a threat?" the woman says, not shrinking back at all. "What are you going to do to me with all these people about?"
+
+*choice
+		# Back off but start peppering her with questions
+		
+		# Back off and apologize
+		
+		# 
+
+*label questions3
+*choice
+	#Who are you?
+		*goto answers
+	#Why did you run from me last night?
+		*goto answers
+	#What's going on with me?
+		*goto answers
+	
+*label answers

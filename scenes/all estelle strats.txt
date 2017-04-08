@@ -1,0 +1,41 @@
+*label grateful-humble		
+*label grateful-panicked
+*label grateful-businesslike
+*label grateful-suave 
+*label grateful-raunchy 
+*label suspicious-probing 
+*label suspicious-aloof 
+*label suspicious-businesslike 
+*label suspicious-suave 
+*label suspicious-raunchy 
+*label suspicious-clever 
+*label suspicious-insulting 
+*label angry-probing 
+*label angry-aloof 
+*label angry-businesslike 
+*label angry-raunchy 
+*label angry-clever 
+*label angry-insulting 
+*label angry-aggressive 
+*label angry-threatening
+
+grateful-humble		
+grateful-panicked
+grateful-businesslike
+grateful-suave 
+grateful-raunchy 
+suspicious-probing 
+suspicious-aloof 
+suspicious-businesslike 
+suspicious-suave 
+suspicious-raunchy 
+suspicious-clever 
+suspicious-insulting 
+angry-probing 
+angry-aloof 
+angry-businesslike 
+angry-raunchy 
+angry-clever 
+angry-insulting 
+angry-aggressive 
+angry-threatening

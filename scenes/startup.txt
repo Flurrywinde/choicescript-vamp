@@ -1,0 +1,277 @@
+*title Vampire Life: A High School Vampire Story
+*scene_list
+	startup
+	2-homecoming
+	3-mysterywoman
+	4-nightgame
+	5-shiftingtides
+	6-vengeance
+	7-darkhalls
+
+*create debug true	
+	
+*create full_name ""
+*create first_name ""
+*create last_name ""
+*create nickname ""
+
+*create height ""
+*comment Tall, Medium, Short
+*create weight ""
+*comment Heavy, Medium, Light
+
+*create strength_day 0
+*create strength_night 0
+*create agility_day 0
+*create agility_night 0
+*create stamina_day 0
+*create stamina_night 0
+*comment Normal human maximum is 50
+
+*create team_rep 99
+*create robyn_rep 99
+*create parents_rep 99
+*create estelle_rep 99
+
+*create fought_muggers 0
+*comment 0=Didn't fight, 1=Fought back, 2=Attacked first
+
+[b]CHAPTER ONE: Dark Reminiscence[/b]
+
+[i]I never thought I'd find myself here, in the school bathroom, with my face being pounded into the cold white porcelain of a filthy toilet by one of the heavy metalheads who wander the school full of anger and just looking for a chance to take it out on someone weaker than themselves.[/i] 
+
+[i]It wasn't always this way. Once, I was on the football team, and this metalhead kid wouldn't have dared make eye contact with me, let alone think he could take me in a fight. I looked down on kids like him, felt superior, but now I know what it's like to feel the pain of being picked on for being weak, how it feels to be misunderstood, for I am indeed very misunderstood. [/i]
+
+[i]I have powers like you wouldn't believe, and though they come at a great price, it's a price I'd willingly pay. No one knows I have them as I walk the halls of Brookdale High School, and that must be how the emo kids feel, looked down upon by the jocks and honor students alike, who will never see the genius in their poetry or their drawings, their hopes and dreams. [/i]
+
+[i]I will tell you how it all began...[/i]
+
+*page_break
+*temp time "10:20 pm"
+[i]I still don't remember how I got there, but I awoke in a graveyard at night, the cool air deathly silent and only the light of the moon to see by. It must've been after a football game, for I discovered I was still in my uniform. How could this be? I have never received an answer to this question, nor have I discovered why I was covered in blood, if it were my own or someone else's, nor how it got there, but my jersey was soaked in it, a terrible and ghastly sight. [/i]
+
+[i]It's strange, but in all the sureality of the moment, the first thing I did was check my watch for the time. I found my gym bag, threw my bloody jersey into it, and put on a t-shirt. It was ${time}, ten minutes before my parents' curfew. No matter what, you were going to be late, but how late was up to you.[/i]
+
+*choice
+	#You've been obedient to it in the past, even if it meant you couldn't hang out with the team or your girlfriend.
+		*set team_rep %-20
+		*set robyn_rep %-20
+		Your friends were bugged by your obedience to your parents' curfew, but you told them you needed to get more sleep to be the best you could be on the field. You missed many nights of bonding with the team or getting closer to your girlfriend, but your parents no longer watch your every move or count the minutes you're late. However, they are still very strict, wanting you to be a football star and get a good scholarship.
+		
+		Other than your gym bag, a quick glance around you showed nothing of note. It was a great mystery why you could not remember how you got here or how your jersey got soaked in blood.
+	
+		*choice
+			#You were too shocked to think about your curfew and began to look around for any hints as to what had happened.
+				*goto lookaround
+			
+			#You decided to rush home, mostly because you were scared someone dangerous might still be lurking about, but also your curfew.
+				*set time "10:40 pm"
+				*goto home
+	
+	#You thought 10:30 was way too early, especially on weekends, so you came home after midnight quite often.
+		*set parents_rep %-40
+		Coming home after midnight so frequently has made your parents crackdown on you, watch your every move, and count every minute you're home late. They keep telling you that you're jeopardizing your football career and might miss out on getting a scholarship if you don't keep your grades up. You feel it was worth it, though, because you got to hang out with your friends and girlfriend. It was fun, carefree times before your current troubles began...
+		
+		Other than your gym bag, a quick glance around you showed nothing of note. It was a great mystery why you could not remember how you got here or how your jersey got soaked in blood.
+
+
+		*choice
+			#You didn't care that your parents will be upset and began to look around for any hints as to what had happened.
+				*goto lookaround
+			
+			#You were scared someone dangerous might still be lurking about, so you rushed home.
+				*set time "10:40 pm"
+				*goto home
+			
+*label lookaround
+*page_break
+
+You slowly move your gaze over the deserted graveyard, the tombstones standing in rows of silent vigil. Nearby is a small stand of trees, and you are just about to conclude that there's nothing of note when you suddenly see a figure, mostly hidden in the shadows of the trees. Quick as a flash, it's gone, leaving you to wonder if it had been there at all.
+
+*set time "10:22 pm"
+[b]Time:[/b] ${time} 
+*line_break
+[b]Curfew:[/b] 10:30 pm. You will be late.
+
+*choice
+	#Rush into the trees, trying not to lose sight of this figure, if it really exists.
+		You dash into the stand of trees, and in the pale moonlight barely catch a glimpse of something disappearing over the gothic stone wall surrounding the cemetery. Being a football player, clearing the stone wall is an easy task for you, and you continue the pursuit, the figure disappearing around the corner of a building in a deserted city street.
+	  
+		*set time "10:29 pm"
+		[b]Time:[/b] ${time} 
+		*line_break
+		[b]Curfew:[/b] 10:30 pm. You will be late.
+
+		[b]WARNING:[/b] This cemetery is in a bad part of town.
+	  
+		*choice
+			#Continue the chase despite the dangerous neighborhood.
+				*goto bad_part_of_town
+			#I need to play it safe. If I get hurt (or worse) out here, I'd let the team down. 
+				*goto home
+	#Just go home. First the blood and now seeing things. You just want to go home and go to bed.
+		Things are getting too weird. You let the figure go and run home, looking over your shoulder every few seconds to make sure nothing is sneaking up on you.
+		*set time "10:49 pm"
+		*goto home
+
+*label bad_part_of_town
+*set parents_rep %-20
+
+Quick as a flash, unbelievably quick as a matter of fact, you round the corner to find yourself face to face with several shabbily dressed but menacing men.
+
+The figure, which you can now clearly see is a young woman, wearing a strange, old-fashioned red cape, has already passed them and is continuing her escape, her long, wavy red hair forming a wake behind her.
+
+"Chasing women, eh?" one of the men says in a threatening voice. "Not if I can help it."
+
+*set time "10:31 pm"
+[b]Time:[/b] ${time} 
+*line_break
+[b]Curfew:[/b] 10:30 pm. 
+*if parents_rep < 80
+	You're late, and you don't care. 
+	*goto endif
+*else
+	You're late!
+	*goto endif
+*label endif
+
+*choice
+	#You attempt to continue your pursuit by running around the group of men.
+		*set fought_muggers 1
+		*goto fight_muggers
+	#You figure that your chance of evading the men while still keeping the woman in sight is quite slim. Better to cut your losses and get out of there before things go from bad to worse.
+		*set time "10:51 pm"
+		*goto home
+	#Fight!
+		*set fought_muggers 2
+		*goto fight_muggers
+
+*label fight_muggers
+*set time "11:04 pm"
+*set parents_rep %-40
+*if fought_muggers = 1
+	"Oh no you don't!" the nearest man says, moving in to tackle you.
+	
+	Your body seems to react instantly, and moving with unimaginable speed, evades the man's grasp. Meanwhile, another man is closing in with his fist cocked by his shoulder to punch, but your fist smashes into his face first, sending him flying off his feet. Strangely, you feel no pain, despite the powerful impact, bone against bone, and you are amazed at the effortlessness with which you were able to summon so much strength. Something is definitely different about you--you're faster and stronger, and as you continue to dispatch the men, you find yourself impervious to their blows. 
+
+	The battle is over in mere seconds, and you turn to look for the fleeing woman. Unfortunately, she's nowhere in sight, and you don't know which direction she went.
+	
+	*choice
+		#She can't have gone far, and now that you've discovered the ability, you're sure you could run extraordinarily fast. Continue the chase!
+			Even with your incredible speed and endurance that never seems to flag, you cannot find the woman anywhere. Meanwhile, the men recover from the beating and slink off into the night. It's time to go home.
+			*goto home
+		#Enough is enough. You are rattled by the violent encounter as well as the strange forces flowing in your body. You go home, running the whole way to test the limits of the strange strength and speed you have somehow acquired.
+			*goto home
+		#See if the men are all right but give up on finding the woman. She's gone.
+			You held back, merely incapacitating them. They'll be all right in the morning, but you want to get out of this bad neighborhood before you encounter any more trouble. It's time to go home.
+			*goto home
+*else
+	You think it might be faster to take the men out quickly, relying on your superior size and strength from your football training. Striking first might not be the most honorable thing to do, but you really want to catch up with this mysterious woman. Besides, they started it, so they deserve what they get.
+	
+	You plow into the nearest man with as much force as you can muster, hoping to tackle not him but anyone else near him. Suddenly everything seems to move in slow-motion, everything that is except you. The man you hit flies back as if thrown by a preternatural force, and the others cannot move out of the way in time. They all collapse into a stunned heap over thirty feet away! Later, you realize that if you could do that on the football field, you'd be invincible, but for the moment, you concerns are closer to home.
+	
+	You turn to look for the fleeing woman and see a flash of red disappearing around another corner. It must be her!
+	*goto endif2
+
+*label endif2
+*choice
+	#Rush around the corner
+		Even with your incredible speed and endurance that never seems to flag, you cannot find the woman anywhere. It's like she disappeared into thin air! Meanwhile, the men recover from the beating except for the first man you hit. "I think he's dead!" you hear one of them say, and you feel a sinking sensation in your chest. Before there's any more trouble, you get the heck outta there.
+		*goto home
+	#Hurry to the corner but cautiously peek around it
+		Even with your incredible speed and endurance that never seems to flag, you cannot find the woman anywhere. It's like she disappeared into thin air! Meanwhile, the men recover from the beating except for the first man you hit. "I think he's dead!" you hear one of them say, and you feel a sinking sensation in your chest. Before there's any more trouble, you get the heck outta there.
+		*goto home
+	#Enough is enough. You are rattled by the violent encounter as well as the strange forces flowing in your body. You give up on the chase, fearing a trap.
+		*goto home
+	#See if the men are all right.
+		Many of them are stirring, recovering from their fall, but the first man you'd hit is lying face up, mouth agape, his eyes blank. Panicking, you flee, your only thought to get home, putting this strange night behind you. You hope it's all some kind of bad dream, but the sinking feeling in your chest tells you your carefree days of school, football, friends, and girlfriend might just be over. In retrospect, you realize you had NO idea...
+		*goto home
+
+*label home
+*page_break
+*if fought_muggers > 0
+	You decide to run the whole way home to test the limits of the strange strength and speed you have somehow acquired, and you find that your running is more like flying, with extremely long strides enabling you to glide down the deserted streets. You traverse the several miles to your neighborhood in only a few minutes, never tiring, watching the slums give way to the quiet suburbs you call home.
+	*goto endif3
+*else
+	Hurrying home, you break into a jog, knowing that you'll be able to traverse three or so miles in about forty minutes if you keep up a good pace, but strangely, as you run, the houses that line the quiet street next to the cemetery seem to be passing by at a far greater speed than normal. Your running is more like flying, with extremely long strides enabling you to glide down the deserted streets. You traverse the several miles to your neighborhood in only a few minutes, never tiring, until you are once again on the familiar suburban streets around your home.
+	*goto endif3
+
+*label endif3
+
+Your house is dark, and checking your watch, it's ${time}. 
+	
+As you step up to the front door, all remains quiet. 
+*if fought_muggers > 0 
+	You check yourself, making sure there are no signs of blood anywhere, either from the fight with the men or the original, mysterious blood stain on your jersey. You find the bloody jersey still safely stowed in your gym bag, and all seems fine.
+	*goto enter_house
+*else
+	You check yourself, making sure there are no signs of blood anywhere. You find the bloody jersey still safely stowed in your gym bag, and all seems fine.
+	*goto enter_house
+
+*label enter_house
+	
+You insert your key and turn the lock as quietly as you can, praying your parents did not wait up for you...  
+*page_break
+*if parents_rep <= 30 
+	Even though your movements were unusually dextrous, before you can turn the door knob, the door flies open, and your father is standing there with a furious expression on his face.
+	
+	"How dare you come home so late?" he cries. "Don't you know I have to go to work tomorrow morning? You're grounded, mister. You've been blatantly ignoring your curfew way too many times, and I've had enough!"
+	*choice
+		#Respond with an angry retort using words that should not be used in polite company.
+			*set parents_rep %-20
+			Suffice it to say, you made it worse, but your parents just don't understand. Your father says he's had enough, but so have you. You smirk, imagining what you could do to him with your newfound strength.
+			
+			*goto status_report
+		#Though it probably will do no good, try to explain what happened.
+			"I know it looks bad, Dad," you say. "But I can explain, really. I woke up in the graveyard downtown, and I don't know how..."
+			
+			"Is that where you kids hang out these days?" Dad shouts, hardly listening to you. "You blacked out. That's what happens when you drink too much. You better go to AA."
+			
+			"Geez," you groan inwardly, stalking off toward your bedroom, not listening to anything further your father has to say.
+			*goto status_report
+*elseif parents_rep <= 60
+	Wow! You seem to have preternatural dexterity and open the door with nary a sound. You begin creeping towards your bedroom when your parents' door opens. "Kinda late there, son," your father says, in his pajamas, but it's obvious he's been waiting up. 
+	
+	"Sorry..." you mutter, and for a second wonder if you should tell him about the strange events of the night. You think better of it, however, knowing he probably wouldn't believe you. You want to find out more about what's going on yourself before you tell others.
+	
+	"I'll let you slide this time," he says and begins a diatribe about needing to be home early so you can get a scholarship to a good college.
+	
+	You've heard it all a thousand times before and trudge off to bed, half-listening.
+	*goto status_report
+*else
+	Wow! You seem to have preternatural dexterity and open the door with nary a sound. You begin creeping towards your bedroom when your parents' door opens. "Kinda late there, son," your father says, in his pajamas, but it's obvious he's been waiting up. 
+	
+	"Sorry..." you mutter, and for a second wonder if you should tell him about the strange events of the night. You think better of it, however, knowing he probably wouldn't believe you. You want to find out more about what's going on yourself before you tell others.
+	
+	"No worries. I'm just glad you're safe, and you deserve to have a little fun after the way you just played. Still, next time if you're gonna be late, just give us a call, okay?"
+	
+	"Sure, Dad," you say, glad he's so understanding. "Good night."
+	
+	"Good night, son. Good job again tonight on the field!"
+	
+	You force a smile. After the strange things that happened tonight, school and football are the least of your concerns, but you put up a good front as you go to your room to sleep.
+	*goto status_report
+	
+*label status_report
+
+You go into your room, change out of the rest of your football uniform, and get into bed, lying there pondering what happened. You remember the football game... You won... and then the next thing you remember was waking up in the cemetary with blood on your jersey, still in your uniform. Normally, you change after a game. Why didn't you this time? Why would you go all the way to the other side of town while still in your cleats and pads? It makes no sense--you'd look like an idiot. And where did the blood come from? Certainly not in the game. 
+
+*if parents_rep <= 30
+	Now, having come home late yet again, you know your parents will be watching you. Sometimes they even search your room when they get like this, but usually they just become a nuisance, trying to control all aspects of your life. You can't wait until you're old enough to leave home.
+	*goto status_report_friends
+*elseif parents_rep <= 60
+	Now, coming home so late, you know your parents will be watching you, but your track record with them has been good, which you hope will count for something. They're generally fair, giving you space if you show them you're responsible, but if you start to get lazy or disrespectful, they're quick with the discipline.
+	*goto status_report_friends
+*else
+	It's good that you made it home so quickly, keeping on your parents good side. You know from past experience that if they ever think you're not keeping regular enough hours or studying enough, they become a nuisance and start to try to control all aspects of your life. Hopefully that won't happen for now.
+	
+*label status_report_friends	
+
+Even though your parents are annoying, you're glad that you can still rely on your friends on the team and your girlfriend, Robyn. 
+*comment %-20's in beginning insignificant at this point to team and robyn rep
+
+You begin to think about the preternatural strength and speed you seem to have acquired. Will it go away? You find yourself hoping you get a chance to use them in the next game.
+
+Ah, such innocence you had back then, that first night. If only you knew the wonders and the horrors that were in store for you...
+
+*finish

@@ -1,0 +1,31 @@
+*if full_name != ""
+	[b]${full_name}[/b], ${height} with a ${weight} build.
+
+	[b]Physical Stats[/b] (During the day)
+	*stat_chart
+		percent strength_day Strength
+		percent agility_day Agility
+		percent stamina_day Stamina
+
+	*line_break		
+	[b]Physical Stats[/b] (During the night)
+	*stat_chart
+		percent strength_night Strength
+		percent agility_night Agility
+		percent stamina_night Stamina
+
+*line_break	
+[b]Relationship Stats[/b]
+*stat_chart
+	percent team_rep Football Team
+	percent robyn_rep Robyn, Your Girlfriend
+	percent parents_rep Your Parents
+	
+*if full_name = ""
+	*line_break	
+	[b]Other Stats[/b]
+	*line_break
+	None yet.	
+	
+*if debug
+	*restore_game
